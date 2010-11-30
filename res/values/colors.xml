@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="Noticias">#01DFD7</color>
+	<color name="Destacados">#81BEF7</color>
+	<color name="Gigs">#F3F781</color>
+	<color name="Discos">#FA58F4</color>
+	<color name="Encore">#2E9AFE</color>
+</resources>
