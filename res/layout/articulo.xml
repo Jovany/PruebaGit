@@ -26,7 +26,7 @@
 	android:id="@+id/imgArticulo"
 	android:src="@drawable/slipknot" 
 	android:layout_width="wrap_content" 
-	android:layout_height="wrap_content">
+	android:layout_height="wrap_content" android:layout_gravity="center" android:padding="10px">
 </ImageView> 
 <TextView 
 	android:text="Joey Jordison, baterista de la banda de metal Slipknot, declaró en entrevista que la agrupación ya se encuentra trabajando en material que podría terminar en un nuevo álbum, el primero desde la muerte de su bajista Paul Gray.

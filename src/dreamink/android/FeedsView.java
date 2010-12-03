@@ -50,6 +50,7 @@ public class FeedsView extends Activity {
 		
         list=(ListView)findViewById(R.id.list);
         //adapter=new AdapterFeeds(this, mStrings, mTitulos);
+        list.setScrollbarFadingEnabled(true);
         adapter=new AdapterFeeds(this, Imagenes, Titulos, Fechas);
         list.setAdapter(adapter);
         
