@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+<TextView 
+	android:text="SLIPKNOT TRABAJA EN NUEVO MATERIAL"
+	android:id="@+id/txtTituloArticulo" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+</TextView>
+<TextView 
+	android:text="2010-12-01T05:31:08-06:00"
+	android:id="@+id/txtFechaArticulo" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+</TextView>
+<ScrollView
+		android:id="@+id/ScrollA"
+        android:layout_width="fill_parent"                
+        android:fadeScrollbars="true"
+        android:layout_height="wrap_content">
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">        
+<ImageView 
+	android:id="@+id/imgArticulo"
+	android:src="@drawable/slipknot" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+</ImageView> 
+<TextView 
+	android:text="Joey Jordison, baterista de la banda de metal Slipknot, declaró en entrevista que la agrupación ya se encuentra trabajando en material que podría terminar en un nuevo álbum, el primero desde la muerte de su bajista Paul Gray.
+
+Ya está en marcha... Definitivamente nos emociona. Es un poco sentimental, por supuesto, pero creo que va a ser muy, muy cool y creo que va a ser en realidad un disco muy fresco, porque todos están realmente involucrados en el proceso... creo que servirá como un proceso de curación para todos nosotros. Slipknot no se va a ninguna parte. Somos una familia, y la pérdida de un miembro de la familia pesta. No lo puedes cambiar, pero necesitas seguir adelante , y creo que lo vamos a hacer podría ser la cosa más poderosa que jamás hayamos creado.
+
+Jordison también mencionó que el lugar de Gray no será ocupado en el estudio, sin embargo, cuando se presenten en vivo alguien tocará el bajo, aunque aún no saben quien será el músico que tome esta responsabilidad.
+
+
+
+www.myspace.com/warpmagazine
+www.facebook.com/warpmagazine"
+	android:id="@+id/txtContenidoArticulo" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+</TextView>
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

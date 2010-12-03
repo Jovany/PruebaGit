@@ -5,14 +5,30 @@
   android:layout_height="wrap_content">
   <ImageView
   	  android:id="@+id/image"
-	  android:layout_width="50dip"
-	  android:layout_height="50dip" android:src="@drawable/icon" android:scaleType="centerCrop"/>
+	  android:layout_width="60dip"
+	  android:layout_height="50dip" 
+	  android:src="@drawable/icon" 
+	  android:scaleType="centerCrop" 
+	  android:padding="5dip"/>
+  <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
   <TextView
   	  android:id="@+id/text"
   	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_weight="1" 
 	  android:layout_gravity="left|center_vertical" 
-	  android:textSize="20dip" 
-	  android:layout_marginLeft="10dip"/>
+	  android:textSize="12dip" 
+	  android:text="Titulo.."
+	  android:layout_marginLeft="10dip"
+	  android:singleLine="true"/>
+  <TextView
+  	  android:id="@+id/txtFecha"
+  	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:layout_weight="1" 
+	  android:layout_gravity="left|center_vertical" 
+	  android:text="Fecha.."
+	  android:layout_marginLeft="10dip" 
+	  android:textSize="10dip"/>
+  </LinearLayout>
 </LinearLayout>
