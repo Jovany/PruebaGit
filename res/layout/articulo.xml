@@ -4,6 +4,12 @@
   android:orientation="vertical"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
+<LinearLayout
+	android:orientation="horizontal"
+	android:background="@drawable/menutop"
+	android:layout_width="fill_parent"
+	android:layout_height="55px">
+</LinearLayout>   
 <TextView 
 	android:text="SLIPKNOT TRABAJA EN NUEVO MATERIAL"
 	android:id="@+id/txtTituloArticulo" 

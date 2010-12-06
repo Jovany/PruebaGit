@@ -5,9 +5,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:background="#666AAA"
-        android:layout_weight="1"
         android:layout_width="fill_parent"        
-        android:layout_height="fill_parent">--85dip
+        android:layout_height="90dip">
         <TextView
             android:id="@+id/toptext"
             android:text="Testing.."
