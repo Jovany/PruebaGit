@@ -90,9 +90,11 @@ public class Warp extends ListActivity{
 					Button btError = (Button) dialog.findViewById(R.id.btDialog);
 					btError.setOnClickListener(new View.OnClickListener() {
 						public void onClick(View v) {	
-							//finish();
-							Intent intent = new Intent(Warp.this, Warp.class);
-			     	    	startActivity(intent);	     	    	
+							/*Intent intent = new Intent(Warp.this, Warp.class);
+			     	    	startActivity(intent);*/
+							Intent intent = getIntent();
+							finish();
+							startActivity(intent);
 						}
 					});
 					dialog.show();
