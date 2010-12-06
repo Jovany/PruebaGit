@@ -34,6 +34,7 @@ public class Warp extends ListActivity{
     private OrderAdapter m_adapter;
     private String nTitulo, urlFeed;
     private FeedBean feed;
+    private String isError;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class Warp extends ListActivity{
         setContentView(R.layout.main);     
         
         feed = new FeedBean();
+        isError = "no";
         m_orders = new ArrayList<Order>();
         
         this.m_adapter = new OrderAdapter(this, R.layout.row, m_orders);
@@ -70,13 +72,31 @@ public class Warp extends ListActivity{
 		    	}
 		    	
 		    	feed = getFeed();
-		    	
-		    	Intent intent = new Intent(Warp.this, FeedsView.class);
-		    	intent.putExtra("Titulos", feed.getFeedTitulo());
-		    	intent.putExtra("Fechas", feed.getFeedFecha());
-		    	intent.putExtra("Imagenes", feed.getFeedImagen());
-		    	intent.putExtra("Articulos", feed.getFeedArticulo());
-     	    	startActivity(intent);
+		    	if(!isError.equals("si")){
+		    		Intent intent = new Intent(Warp.this, FeedsView.class);
+			    	intent.putExtra("Titulos", feed.getFeedTitulo());
+			    	intent.putExtra("Fechas", feed.getFeedFecha());
+			    	intent.putExtra("Imagenes", feed.getFeedImagen());
+			    	intent.putExtra("Articulos", feed.getFeedArticulo());
+	     	    	startActivity(intent);
+		    	}
+		    	else{
+		    		Dialog dialog = new Dialog(Warp.this);
+					dialog.setContentView(R.layout.dialogerror);
+					dialog.setTitle("Connection Error");
+					dialog.setCancelable(true);
+					TextView txtError = (TextView) dialog.findViewById(R.id.txtDialog);
+					txtError.setText("No se puede conectar al servidor\n Intente mas tarde.");
+					Button btError = (Button) dialog.findViewById(R.id.btDialog);
+					btError.setOnClickListener(new View.OnClickListener() {
+						public void onClick(View v) {	
+							//finish();
+							Intent intent = new Intent(Warp.this, Warp.class);
+			     	    	startActivity(intent);	     	    	
+						}
+					});
+					dialog.show();
+		    	}
 		    }
 		  });
     }
@@ -191,23 +211,8 @@ public class Warp extends ListActivity{
 		} catch (Exception e) {
 			System.out.println("Error Warp.java->en getFeed:(error) "+e);
 			System.out.println("Error Warp.java->en getFeed:(mensaje) "+e.getMessage());
-			//-->
-			/*Dialog dialog = new Dialog(Warp.this);
-			dialog.setContentView(R.layout.dialogerror);
-			dialog.setTitle("Server Error");
-			dialog.setCancelable(true);
-			TextView txtError = (TextView) dialog.findViewById(R.id.txtDialog);
-			txtError.setText(e.getMessage());
-			Button btError = (Button) dialog.findViewById(R.id.btDialog);
-			btError.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {	
-					//finish();
-					Intent intent = new Intent(Warp.this, Warp.class);
-	     	    	startActivity(intent);	     	    	
-				}
-			});
-			dialog.show();*/			
-			//<--
+
+			isError = "si";			
 		}
 		return fdb;
     }
